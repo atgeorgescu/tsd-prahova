@@ -20,7 +20,7 @@ function deliver(subj,body){const m=`mailto:${CFG.email}?subject=${encodeURIComp
  $('#modb').innerHTML=`<a class="btn" href="${m}">Deschide e-mailul</a> ${w?`<a class="btn" href="${w}" target="_blank">Trimite pe WhatsApp</a>`:''}`;mod.classList.add('on');location.href=m}
 function send(e,subj){e.preventDefault();const fd=new FormData(e.target);let b='';for(const[k,v]of fd)if(v&&k!=='on')b+=`${k}: ${v}\n`;deliver(subj,b);e.target.reset();return false}
 function nl(e){e.preventDefault();deliver('Abonare evenimente','E-mail: '+e.target.email.value);return false}
-const P=['Locuri de muncă pentru tineri','Transport între localități','Școli și educație','Sport și spații de joacă','Mediu și Valea Prahovei curată','Internet și digitalizare','Locuințe pentru tineri','Cultură și evenimente'];let S=[];
+const P=['Mediu: Prahova curată și spații verzi','Mediu: reciclare în școli','Educație: șanse egale la sat și la oraș','Educație: orientare în carieră','Siguranța tinerilor: drum sigur spre școală','Siguranța tinerilor: siguranță online','Sport: terenuri renovate','Sport: competiții între localități'];let S=[];
 if($('#bus'))$('#bus').innerHTML=P.map((p,i)=>`<button class="card" style="cursor:pointer;text-align:left;font:inherit;color:var(--ink)" id="p${i}" onclick="pick(${i})">${p}</button>`).join('');
 function pick(i){S.includes(i)?S=S.filter(x=>x!==i):S.length<3&&S.push(i);P.forEach((_,j)=>$('#p'+j).style.borderColor=S.includes(j)?'var(--r)':'');$('#busr').textContent=S.length?'Prioritățile tale: '+S.map(x=>P[x]).join(', '):''}
 function busSend(){if(!S.length)return alert('Alege cel puțin o prioritate');deliver('Busola Prahovei',S.map(x=>P[x]).join('\n'))}
