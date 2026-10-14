@@ -69,3 +69,18 @@ nav.menu a.act{color:var(--ink);box-shadow:inset 0 -2px 0 var(--r)}
 @media(max-width:860px){.tz[style*="repeat(4"]{grid-template-columns:1fr 1fr!important}}
 .tl{display:grid;grid-template-columns:140px 1fr;gap:30px;padding:36px 0;border-bottom:1px solid var(--br)}.tld{font-weight:800;color:var(--r)}
 @media(max-width:600px){.tl{grid-template-columns:1fr;gap:6px}}
+/* red brand accent */
+.btn{background:var(--r)}.btn:hover{background:var(--ink)}
+.logo b{background:var(--r);color:#fff}.logo b:after{background:#fff}
+.kick{color:var(--r)!important;font-weight:800}.kick:before{color:var(--r)}
+.hero{border-bottom:4px solid var(--r)}.hero h1 em,.big em{color:var(--r)}
+.stats,.tz{border-top:2px solid var(--r)}
+.tzi span{color:var(--r)}.tzi:hover h3{color:var(--r)}.tzi:hover{background:linear-gradient(var(--r),var(--r)) bottom/100% 3px no-repeat}
+.card:hover{border-color:var(--r)}nav.menu a:hover{color:var(--r)}nav.menu a.act{color:var(--r)}
+.filters button.on,.tabs button.on{background:var(--r);border-color:var(--r);color:#fff}
+.tag{background:var(--r);color:#fff}input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--r)}
+h2:after{content:"";display:block;width:56px;height:4px;background:var(--r);margin-top:18px}
+section.alt.cta,.quote{background:var(--r);color:#fff}
+footer{border-top:4px solid var(--r)}
+details[open] summary,summary:hover{color:var(--r)}.how li::marker{color:var(--r)}
+a{color:var(--r)}
