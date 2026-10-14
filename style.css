@@ -67,3 +67,5 @@ nav.menu a.act{color:var(--ink);box-shadow:inset 0 -2px 0 var(--r)}
 .skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;z-index:200;background:var(--ink);color:var(--bg);padding:8px}
 .ck{position:fixed;bottom:16px;left:16px;right:16px;max-width:560px;background:var(--bg);border:1px solid var(--ink);padding:16px 20px;z-index:90;font-size:14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}.ck[hidden]{display:none}
 @media(max-width:860px){.tz[style*="repeat(4"]{grid-template-columns:1fr 1fr!important}}
+.tl{display:grid;grid-template-columns:140px 1fr;gap:30px;padding:36px 0;border-bottom:1px solid var(--br)}.tld{font-weight:800;color:var(--r)}
+@media(max-width:600px){.tl{grid-template-columns:1fr;gap:6px}}
