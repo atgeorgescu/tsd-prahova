@@ -53,3 +53,9 @@ input,select,textarea{border-radius:0;border:0;border-bottom:1px solid var(--ink
 footer{background:var(--bg);color:var(--mut);border-top:1px solid var(--ink)}footer a{color:var(--ink)}
 details{border-radius:0;border:0;border-bottom:1px solid var(--br);padding:22px 0;background:none}
 @media(max-width:860px){.hero{padding:80px 0 60px}section{padding:72px 0}.stats b{font-size:40px}}
+nav.menu a.act{color:var(--ink);box-shadow:inset 0 -2px 0 var(--r)}
+.tz{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);margin-top:50px}
+.tzi{padding:40px 28px 40px 0;border-bottom:1px solid var(--br);text-decoration:none;color:var(--ink);position:relative}.tzi span{color:var(--r);font-weight:700;font-size:13px}.tzi p{color:var(--mut)}.tzi i{font-style:normal;font-size:24px;transition:.2s}.tzi:hover i{padding-left:10px;color:var(--r)}
+.big{font-size:clamp(28px,4.5vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1.1;max-width:900px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;line-height:2}
+@media(max-width:860px){.tz{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}}
