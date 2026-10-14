@@ -1,0 +1,81 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TSD Prahova — Tineretul Social Democrat Prahova</title>
+<meta name="description" content="TSD Prahova — organizația județeană de tineret a PSD, prezentă în cele 104 localități ale județului Prahova. Înscrie-te, fă voluntariat, raportează o problemă.">
+<meta name="theme-color" content="#d0021b"><link rel="stylesheet" href="style.css">
+<script>document.documentElement.dataset.theme=localStorage.getItem('t')||'light'</script></head><body>
+<header><div class="w nav"><a class="logo" href="#"><b>TSD</b><span>Prahova<small>Tineretul Social Democrat</small></span></a>
+<nav class="menu" id="menu"><a href="#despre">Despre</a><a href="#localitati">Localități</a><a href="#echipa">Echipa</a><a href="#stiri">Știri</a><a href="#evenimente">Evenimente</a><a href="#sesizari">Sesizări</a><a href="#contact">Contact</a><a class="btn" href="#implica">Înscrie-te</a></nav>
+<span><button class="theme" onclick="tt()" aria-label="Schimbă tema">◐</button> <button class="burger" onclick="menu.classList.toggle('on')" aria-label="Meniu">☰</button></span></div></header>
+
+<div class="hero"><div class="w"><div class="kick">Tineretul Social Democrat</div><h1>Energie tânără pentru<br>toată Prahova</h1>
+<p>De la Ploiești și Câmpina până în cea mai mică comună: 104 localități, o singură echipă. Implică-te, câștigă experiență reală și schimbă comunitatea în care trăiești. Înscrierea e gratuită.</p>
+<p><a class="btn" style="background:#fff;color:#d0021b!important" href="#implica">Devino membru →</a> <a class="btn o" href="#localitati">Găsește organizația ta</a></p>
+<div class="stats"><div><b>104</b>localități</div><div><b>2</b>municipii</div><div><b>12</b>orașe</div><div><b>90</b>comune</div></div></div></div>
+
+<section id="despre"><div class="w"><div class="kick" style="color:var(--r)">Cine suntem</div><h2>Tinerii care construiesc viitorul Prahovei</h2>
+<p class="lead">TSD Prahova este organizația județeană de tineret a Partidului Social Democrat. Reunim elevi, studenți și tineri profesioniști din toate cele 104 unități administrativ-teritoriale ale județului. Credem în dreptate socială, egalitate de șanse și implicarea tinerilor în deciziile care le modelează viitorul.</p>
+<div class="grid" style="margin-top:26px"><div class="card"><h3>Dreptate socială</h3><p>Politici care nu lasă pe nimeni în urmă, la oraș și la sat.</p></div><div class="card"><h3>Educație & șanse</h3><p>Acces la educație de calitate și la primul loc de muncă pentru tinerii prahoveni.</p></div><div class="card"><h3>Comunitate</h3><p>Acțiuni concrete în localități, alături de oameni, prin organizațiile locale TSD.</p></div></div></div></section>
+
+<section class="alt" id="proiecte"><div class="w"><div class="kick" style="color:var(--r)">Ce ne propunem</div><h2>Direcții de acțiune</h2><p class="lead">Programe propuse pentru tinerii din Prahova. Sunt planuri, nu realizări — le vom documenta aici pe măsură ce se întâmplă.</p>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>Tineri în administrație</h3><p>Internshipuri în primării și la Consiliul Județean, consilii locale ale tinerilor.</p></div>
+<div class="card"><h3>Prahova Curată</h3><p>Ecologizări pe Valea Prahovei, pe Valea Teleajenului și în parcurile din orașe.</p></div>
+<div class="card"><h3>Educație civică</h3><p>Sesiuni în licee: cum funcționează democrația și administrația locală.</p></div>
+<div class="card"><h3>Primul job</h3><p>Târguri de joburi și mentorat, în parteneriat cu angajatori din județ.</p></div>
+<div class="card"><h3>Sport în comunitate</h3><p>Competiții între localități și reabilitarea terenurilor de sport.</p></div>
+<div class="card"><h3>Satul nu e uitat</h3><p>Voluntariat social pentru vârstnici și familii vulnerabile din comunele județului.</p></div>
+</div></div></section>
+
+<section id="localitati"><div class="w"><div class="kick" style="color:var(--r)">Rețeaua județeană</div><h2>Organizațiile din cele 104 localități</h2><p class="lead">Caută localitatea ta și află cine coordonează organizația TSD de acolo. Dacă nu există încă una, poți fi tu cel care o pornește.</p>
+<div class="filters"><input id="q" placeholder="Caută localitatea… (ex: Băicoi, Păulești)"><button data-f="" class="on">Toate</button><button data-f="municipiu">Municipii</button><button data-f="oras">Orașe</button><button data-f="comuna">Comune</button></div>
+<p id="cnt" style="color:var(--mut)"></p><div class="loc" id="loc"></div></div></section>
+
+<section class="alt" id="echipa"><div class="w"><div class="kick" style="color:var(--r)">Conducerea județeană</div><h2>Echipa TSD Prahova</h2><p class="lead ph" style="padding:8px 12px;border-radius:8px">Exemplu — numele, funcțiile și fotografiile reale vor fi completate de organizație.</p>
+<div class="grid" style="margin-top:20px" id="team"></div></div></section>
+
+<section id="stiri"><div class="w"><div class="kick" style="color:var(--r)">Ultimele noutăți</div><h2>Știri & activități</h2>
+<div class="grid" style="margin-top:20px">
+<div class="card ph"><span class="tag g">Exemplu</span><h3>Știre exemplu</h3><p>Aici va apărea prima știre a organizației, cu fotografii și dată.</p></div>
+<div class="card ph"><span class="tag g">Exemplu</span><h3>Știre exemplu</h3><p>Acțiuni, comunicate și activități din localitățile județului.</p></div>
+<div class="card ph"><span class="tag g">Exemplu</span><h3>Știre exemplu</h3><p>Publicăm fiecare acțiune pe măsură ce se întâmplă.</p></div></div></div></section>
+
+<section class="alt" id="evenimente"><div class="w"><div class="kick" style="color:var(--r)">Agenda</div><h2>Evenimente apropiate</h2>
+<div class="card ph" style="margin-top:16px"><span class="tag g">Exemplu</span><h3>Eveniment exemplu — dată, oră, localitate</h3><p>Niciun eveniment programat încă. Lasă-ne e-mailul și ești primul care află.</p>
+<form onsubmit="return nl(event)" style="grid-template-columns:1fr auto;max-width:520px"><input type="email" required name="email" placeholder="Adresa ta de e-mail"><button class="btn">Anunță-mă</button></form></div></div></section>
+
+<section id="sesizari"><div class="w"><div class="kick" style="color:var(--r)">Vocea ta contează</div><h2>Ai o problemă în localitatea ta?</h2><p class="lead">Drum stricat, iluminat, gunoi, transport, școală? Spune-ne. Preluăm sesizarea, o transmitem autorității responsabile și revenim la tine.</p>
+<div class="grid steps" style="margin:20px 0"><div class="card"><h3>Raportezi</h3><p>Completezi formularul cu problema și localitatea.</p></div><div class="card"><h3>Preluăm</h3><p>Organizația locală analizează și transmite sesizarea.</p></div><div class="card"><h3>Urmărim</h3><p>Revenim la tine când se mișcă ceva.</p></div></div>
+<form class="card" onsubmit="return send(event,'Sesizare')"><div class="two"><input name="Nume" required placeholder="Nume și prenume"><input name="Telefon" placeholder="Telefon"></div>
+<div class="two"><select name="Localitate" required class="selloc"></select><select name="Categorie"><option>Drumuri și trotuare</option><option>Iluminat public</option><option>Salubritate</option><option>Transport</option><option>Școli și spații de joacă</option><option>Altele</option></select></div>
+<input name="Adresa/locul problemei" placeholder="Strada / reper"><textarea name="Descriere" required rows="4" placeholder="Descrie problema"></textarea>
+<label class="c"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor conform <a href="confidentialitate.html">politicii de confidențialitate</a>.</label><button class="btn">Trimite sesizarea</button></form></div></section>
+
+<section class="alt" id="implica"><div class="w"><div class="kick" style="color:var(--r)">Implică-te</div><h2>Alătură-te TSD Prahova</h2><p class="lead">Înscrierea este gratuită, pentru tineri până în 35 de ani. Pentru minori este necesar acordul unui părinte.</p>
+<div class="tabs"><button class="on" data-t="m">Devino membru</button><button data-t="v">Voluntar</button><button data-t="b">Busola Prahovei</button></div>
+<form class="card" id="t-m" onsubmit="return send(event,'Adeziune')"><div class="two"><input name="Nume" required placeholder="Nume și prenume"><input name="Vârstă" type="number" min="14" max="35" required placeholder="Vârsta" id="age"></div>
+<div class="two"><input name="E-mail" type="email" required placeholder="E-mail"><input name="Telefon" required placeholder="Telefon"></div>
+<select name="Localitate" required class="selloc"></select>
+<div id="guard" style="display:none" class="two"><input name="Părinte/tutore" placeholder="Nume părinte/tutore"><input name="Telefon părinte" placeholder="Telefon părinte"></div>
+<textarea name="Mesaj" rows="3" placeholder="De ce vrei să te implici? (opțional)"></textarea><input name="Recomandat de" placeholder="Recomandat de (opțional)">
+<label class="c"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor conform <a href="confidentialitate.html">politicii de confidențialitate</a>.</label><button class="btn">Trimite adeziunea</button></form>
+<form class="card" id="t-v" style="display:none" onsubmit="return send(event,'Voluntariat')"><div class="two"><input name="Nume" required placeholder="Nume și prenume"><input name="Telefon" required placeholder="Telefon"></div><div class="two"><input name="E-mail" type="email" placeholder="E-mail"><select name="Localitate" required class="selloc"></select></div>
+<select name="Domeniu"><option>Ecologizare</option><option>Social</option><option>Educație</option><option>Sport</option><option>Evenimente</option><option>Comunicare online</option></select>
+<label class="c"><input type="checkbox" name="Adeverință ore voluntariat liceu" value="Da"> Am nevoie de adeverință pentru orele de voluntariat (liceu)</label>
+<label class="c"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor.</label><button class="btn">Vreau să fiu voluntar</button></form>
+<div class="card" id="t-b" style="display:none"><h3>Ce contează cel mai mult pentru tine în Prahova?</h3><p style="color:var(--mut)">Alege 3 priorități. Rezultatul ne ajută să știm ce vor tinerii din județ.</p><div id="bus" class="grid"></div><p id="busr" style="font-weight:700"></p><button class="btn" onclick="busSend()">Trimite răspunsul</button></div>
+</div></section>
+
+<section id="faq"><div class="w"><h2>Întrebări frecvente</h2>
+<details><summary>Cine se poate înscrie în TSD Prahova?</summary><p>Tinerii cu domiciliul sau reședința în județul Prahova, până în 35 de ani. Minorii au nevoie de acordul unui părinte.</p></details>
+<details><summary>Costă ceva înscrierea?</summary><p>Nu, înscrierea este gratuită.</p></details>
+<details><summary>Ce fac dacă în localitatea mea nu există organizație TSD?</summary><p>Înscrie-te oricum și alege localitatea. Te punem în legătură cu cea mai apropiată organizație sau te ajutăm să pornești una.</p></details>
+<details><summary>Pot primi adeverință pentru orele de voluntariat de la liceu?</summary><p>Da, bifează opțiunea în formularul de voluntariat.</p></details>
+<details><summary>Ce se întâmplă cu sesizarea mea?</summary><p>O preluăm, o transmitem instituției responsabile și revenim la tine cu un răspuns.</p></details></div></section>
+
+<section class="alt" id="contact"><div class="w"><h2>Contact</h2><div class="grid">
+<div class="card"><p><b>E-mail:</b> <a id="cmail"></a><br><b>Telefon:</b> <span id="ctel"></span><br><b>Adresă:</b> <span id="cadr"></span></p><p id="soc"></p></div>
+<form class="card" onsubmit="return send(event,'Mesaj contact')"><input name="Nume" required placeholder="Nume"><input name="E-mail" type="email" required placeholder="E-mail"><input name="Subiect" placeholder="Subiect"><textarea name="Mesaj" required rows="4" placeholder="Mesajul tău"></textarea><button class="btn">Trimite</button></form></div></div></section>
+
+<footer><div class="w"><b style="color:#fff">TSD Prahova</b> — Tineretul Social Democrat, organizația județeană Prahova, parte a <a href="https://www.psd.ro" target="_blank" rel="noopener">PSD</a>.<p><a href="confidentialitate.html">Confidențialitate</a> · <a href="#faq">Întrebări frecvente</a> · <a href="#contact">Contact</a></p><p>© 2026 TSD Prahova</p></div></footer>
+<div class="modal" id="mod"><div class="card"><h3>Aproape gata!</h3><p id="modt"></p><p id="modb"></p><button class="btn" onclick="mod.classList.remove('on')">Închide</button></div></div>
+<script src="config.js"></script><script src="localitati.js"></script><script src="app.js"></script></body></html>
