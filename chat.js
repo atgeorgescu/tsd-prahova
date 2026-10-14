@@ -33,7 +33,7 @@ function next(){step++;while(step<S.length&&S[step].if&&!S[step].if())step++;
  const s=S[step];say(s.q);quick(s.qr);I.focus()}
 async function handle(v){v=String(v).trim();if(!v)return;say(v,'me');I.value='';AC.style.display='none';
  if(step===-1){if(yes(v)||/înscriu|inscriu|membru/i.test(v)){say('Super! Îți pun câteva întrebări, pe rând. Durează un minut.');next()}else if(/intreb|faq/i.test(norm(v))){say('Găsești răspunsurile la Întrebări frecvente.');location.href='intrebari.html'}else if(/directi/i.test(norm(v))){say('Ne concentrăm pe Mediu, Educație, Siguranța tinerilor și Sport.');location.href='directii.html'}else{say('Nicio problemă! Dacă te răzgândești, scrie „Da” oricând.');quick(['Da, vreau să mă înscriu'])}return}
- if(step===99){if(yes(v)){quick();say('Se trimite…');let ok=false;try{const r=await fetch(((window.CFG&&CFG.api)||'')+'/api/submit.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:'Adeziune',source:'chat',data:D})});ok=(await r.json()).ok}catch(e){}
+ if(step===99){if(yes(v)){quick();say('Se trimite…');let ok=false;try{const r=await fetch(((window.CFG&&CFG.api)?CFG.api+'/':'')+'api/submit.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:'Adeziune',source:'chat',data:D})});ok=(await r.json()).ok}catch(e){}
    if(ok){say('Gata! Înscrierea ta a fost înregistrată. 🎉 Te contactează în curând cineva din echipa TSD Prahova.');sessionStorage.tcDone=1;step=100}else{say('N-am reușit să trimit acum. Încearcă din nou sau folosește formularul de pe pagina Implică-te.');quick(['Da, trimite'])}}
   else{D={};step=-1;say('Bine, reluăm.');next()}return}
  if(step===100){say('Ești deja înscris. Mulțumim!');return}

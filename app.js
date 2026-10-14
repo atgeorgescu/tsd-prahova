@@ -18,7 +18,7 @@ function deliver(subj,body){const m=`mailto:${CFG.email}?subject=${encodeURIComp
  const w=CFG.whatsapp?`https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(subj+'\n'+body)}`:'';
  $('#modt').textContent='Se deschide aplicația de e-mail cu mesajul completat. Apasă „Trimite” acolo.';
  $('#modb').innerHTML=`<a class="btn" href="${m}">Deschide e-mailul</a> ${w?`<a class="btn" href="${w}" target="_blank">Trimite pe WhatsApp</a>`:''}`;mod.classList.add('on');location.href=m}
-async function submit(kind,data,source){try{const r=await fetch((CFG.api||'')+'/api/submit.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,source:source||location.pathname,data})});const j=await r.json();return j.ok}catch(e){return false}}
+async function submit(kind,data,source){try{const r=await fetch(((window.CFG&&CFG.api)?CFG.api+'/':'')+'api/submit.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,source:source||location.pathname,data})});const j=await r.json();return j.ok}catch(e){return false}}
 function okMsg(t){$('#modt').textContent=t;$('#modb').innerHTML='';mod.classList.add('on')}
 async function send(e,subj){e.preventDefault();const f=e.target,fd=new FormData(f),d={};let b='';for(const[k,v]of fd)if(v&&k!=='on'){d[k]=v;b+=`${k}: ${v}\n`}
  const btn=f.querySelector('button.btn,button:last-child');if(btn){btn.disabled=true;btn.dataset.t=btn.textContent;btn.textContent='Se trimite…'}
