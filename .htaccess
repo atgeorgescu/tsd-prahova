@@ -1,0 +1,12 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+<Files "config.php">
+  Require all denied
+</Files>
+<FilesMatch "^(Dockerfile|README\.md|\.git.*)$">
+  Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+ErrorDocument 404 /index.html

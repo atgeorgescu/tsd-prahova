@@ -13,13 +13,18 @@ $$('.selloc').forEach(s=>s.innerHTML='<option value="">Alege localitatea…</opt
 const roles=['Președinte TSD Prahova','Prim-vicepreședinte','Vicepreședinte','Vicepreședinte','Secretar general','Responsabil comunicare'];
 if($('#team'))$('#team').innerHTML=roles.map(r=>`<div class="card ph"><div class="av">👤</div><h3>Nume Prenume</h3><p style="margin:0">${r}</p></div>`).join('');
 $$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');['m','v','b'].forEach(k=>$('#t-'+k).style.display=k===b.dataset.t?'':'none')});
-if($('#age'))$('#age').oninput=e=>$('#guard').style.display=(+e.target.value&&+e.target.value<18)?'':'none';
+if($('#age'))$('#age').oninput=e=>{const m=+e.target.value&&+e.target.value<18;$('#guard').style.display=m?'':'none';$$('#guard input').forEach(i=>i.required=m)};
 function deliver(subj,body){const m=`mailto:${CFG.email}?subject=${encodeURIComponent('[TSD Prahova] '+subj)}&body=${encodeURIComponent(body)}`;
  const w=CFG.whatsapp?`https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(subj+'\n'+body)}`:'';
  $('#modt').textContent='Se deschide aplicația de e-mail cu mesajul completat. Apasă „Trimite” acolo.';
  $('#modb').innerHTML=`<a class="btn" href="${m}">Deschide e-mailul</a> ${w?`<a class="btn" href="${w}" target="_blank">Trimite pe WhatsApp</a>`:''}`;mod.classList.add('on');location.href=m}
-function send(e,subj){e.preventDefault();const fd=new FormData(e.target);let b='';for(const[k,v]of fd)if(v&&k!=='on')b+=`${k}: ${v}\n`;deliver(subj,b);e.target.reset();return false}
-function nl(e){e.preventDefault();deliver('Abonare evenimente','E-mail: '+e.target.email.value);return false}
+async function submit(kind,data,source){try{const r=await fetch((CFG.api||'')+'/api/submit.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,source:source||location.pathname,data})});const j=await r.json();return j.ok}catch(e){return false}}
+function okMsg(t){$('#modt').textContent=t;$('#modb').innerHTML='';mod.classList.add('on')}
+async function send(e,subj){e.preventDefault();const f=e.target,fd=new FormData(f),d={};let b='';for(const[k,v]of fd)if(v&&k!=='on'){d[k]=v;b+=`${k}: ${v}\n`}
+ const btn=f.querySelector('button.btn,button:last-child');if(btn){btn.disabled=true;btn.dataset.t=btn.textContent;btn.textContent='Se trimite…'}
+ const ok=await submit(subj,d,'formular '+location.pathname);if(btn){btn.disabled=false;btn.textContent=btn.dataset.t}
+ if(ok){f.reset();okMsg(subj==='Adeziune'?'Mulțumim! Adeziunea ta a fost înregistrată. Te contactăm în curând.':'Mulțumim! Am primit mesajul tău.')}else deliver(subj,b);return false}
+async function nl(e){e.preventDefault();const v=e.target.email.value;if(await submit('Newsletter',{'E-mail':v}))okMsg('Te-ai abonat. Mulțumim!');else deliver('Abonare newsletter','E-mail: '+v);e.target.reset();return false}
 const P=['Mediu: Prahova curată și spații verzi','Mediu: reciclare în școli','Educație: șanse egale la sat și la oraș','Educație: orientare în carieră','Siguranța tinerilor: drum sigur spre școală','Siguranța tinerilor: siguranță online','Sport: terenuri renovate','Sport: competiții între localități'];let S=[];
 if($('#bus'))$('#bus').innerHTML=P.map((p,i)=>`<button class="card" style="cursor:pointer;text-align:left;font:inherit;color:var(--ink)" id="p${i}" onclick="pick(${i})">${p}</button>`).join('');
 function pick(i){S.includes(i)?S=S.filter(x=>x!==i):S.length<3&&S.push(i);P.forEach((_,j)=>$('#p'+j).style.borderColor=S.includes(j)?'var(--r)':'');$('#busr').textContent=S.length?'Prioritățile tale: '+S.map(x=>P[x]).join(', '):''}
